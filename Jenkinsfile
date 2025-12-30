@@ -33,9 +33,11 @@ pipeline {
    }
 
 
-        stage('Docker Build') {
+        stage('Build Docker') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh 'ls -l target/'
+
+                sh 'docker build -t tp3-java-app:latest .'
             }
         }
 
